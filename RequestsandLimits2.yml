@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat-deployment
+  labels:
+    type: appserver
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: appserver
+  template:
+    metadata:
+      name: tomcat-pod
+      labels:
+        type: appserver
+    spec:
+      containers:
+        - name: mytomcat
+          image: tomee
+          ports:
+            - containerPort: 8080
+              hostPort: 8080
+          resources:
+            requests:
+              cpu: "64m"
+              memory: "250Mi"
+            limits:
+              cpu: "128m"
+              memory: "500Mi"
+              
+              
+    
+    
+    
+    
