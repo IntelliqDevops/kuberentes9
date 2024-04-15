@@ -5,7 +5,7 @@ metadata:
   labels:
     type: proxy
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       type: proxy
