@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: blue-nginx-deployment
   labels:
     type: proxy
 spec:
-  replicas: 2
+  replicas: 3
   strategy:
     type: Recreate
   selector:
